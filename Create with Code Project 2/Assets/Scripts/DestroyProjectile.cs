@@ -7,22 +7,24 @@ public class DestroyProjectile : MonoBehaviour
     // Start is called before the first frame update
 
     public float topBound = 30.0f;
-    public float lowerBound = -10.0f;
+    public float lowerBound = -18.0f;
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //if an object goes past the palyers view in the game remove that object
         if (transform.position.z > topBound)
         {
             Destroy(gameObject);
-        } 
-        else if (transform.position.z < -10)
+        }
+        else if (transform.position.z < lowerBound)
         {
+            Debug.Log("Game Over!");
             Destroy(gameObject);
 
         }
